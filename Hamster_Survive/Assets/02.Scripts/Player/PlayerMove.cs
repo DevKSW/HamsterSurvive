@@ -8,7 +8,6 @@ public class PlayerMove : MonoBehaviour
     public float speed = 10;
     private Vector2 move = Vector2.zero;
 
-
     //private KeyCode up_K = KeyCode.UpArrow;
     //private KeyCode down_K = KeyCode.DownArrow;
     //private KeyCode right_K = KeyCode.RightArrow;

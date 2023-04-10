@@ -38,9 +38,10 @@ public class Player_Main : MonoBehaviour
         get {return playerMove.speed; }
         set {playerMove.speed = value;}
     }
+    
 
-    private float HitTimer = 0 ;
-    private float HitTime = 0.3f;
+    private float UnbeatableTimer = 0 ;
+    private float UnbeatableTime = 0.3f;
 
     public SpriteRenderer render;
 
@@ -57,9 +58,9 @@ public class Player_Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(HitTimer >= 0)
+        if(UnbeatableTimer >= 0)
         {
-            HitTimer -= Time.deltaTime; 
+            UnbeatableTimer -= Time.deltaTime; 
         }    
 
     }
@@ -75,10 +76,10 @@ public class Player_Main : MonoBehaviour
 
     public void Hit(int damage = 1)
     {
-        if(HitTimer <=0)
+        if(UnbeatableTimer <=0)
         {
-            HitTimer = HitTime;
-            
+            UnbeatableTimer = UnbeatableTime;
+            HP -= damage;
         }
 
     }
@@ -86,4 +87,5 @@ public class Player_Main : MonoBehaviour
     {
         Debug.Log("Game Over!");
     }
+
 }

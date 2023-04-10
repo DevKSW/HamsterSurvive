@@ -30,6 +30,7 @@ public class Enemy_AI_Melee : Enemy_AI_Base
         
         if(mMotionTimer > 0)
         {
+            ani.SetTrigger("Attack");
             attackRange.localScale = Vector3.one * m_attackDistance * 2;
             attackRange.GetComponent<SpriteRenderer>().enabled = true;
             mDir = Vector3.zero;

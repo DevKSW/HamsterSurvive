@@ -6,7 +6,7 @@ public  class Enemy_AI_Base : CanOP
 {
     [SerializeField] protected float speed = 3;
 
-    private Animator ani;
+    protected Animator ani;
 
 
     protected Vector3 _mDir = Vector3.zero;
