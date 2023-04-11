@@ -39,11 +39,11 @@ public class PlayerMove : MonoBehaviour
         
         
         
-        if(horizontal > 0 || vertical > 0)
+        if(horizontal > 0)
         {
             Player_Main.instance.render.flipX = true;
         }
-        else if (horizontal < 0 || vertical < 0)
+        else if (horizontal < 0)
         {
             Player_Main.instance.render.flipX = false;
         }

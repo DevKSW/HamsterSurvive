@@ -82,9 +82,16 @@ public  class Enemy_AI_Base : CanOP
 
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    
+        
+    private void OnTriggerStay2D(Collider2D collision)
     {
-
+        
+        if (Player_Main.instance.Hit(1))
+        {
+            Debug.Log("Hit(Base)");
+        }
+        
     }
     protected Vector3 GetDir()
     {

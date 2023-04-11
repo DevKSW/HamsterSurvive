@@ -7,7 +7,7 @@ public class Player_Main : MonoBehaviour
     public static Player_Main instance;
     [SerializeField] private PlayerMove playerMove;
     
-    private Info playerInfo = new Info();
+    private Info playerInfo = new Info(1,10,1);
 
     private int _HP;
     private int _AP;
@@ -17,14 +17,20 @@ public class Player_Main : MonoBehaviour
     {
         get { return _HP; }
         set {
-            if ( value <= 0)
+            if (UnbeatableTimer <= 0)
             {
-                ani.SetTrigger("DEAD");
-            }
-            else
-            {
-                ani.SetTrigger("Hit");
-                _HP = value;
+                UnbeatableTimer = UnbeatableTime;
+                Debug.Log(_HP);
+                if (value <= 0)
+                {
+                    ani.SetTrigger("Dead");
+                }
+                else
+                {
+                    ani.SetTrigger("Hit");
+                    _HP = value;
+                }
+
             }
         }
     } 
@@ -40,11 +46,12 @@ public class Player_Main : MonoBehaviour
     }
     
 
-    private float UnbeatableTimer = 0 ;
-    private float UnbeatableTime = 0.3f;
+    private double UnbeatableTimer = 0 ;
+    [Header("플레이어 무적 시간")]
+    [SerializeField]private double UnbeatableTime = 1.0f;
 
+    [Header("Renderer")]
     public SpriteRenderer render;
-
     public Animator ani;
 
     // Start is called before the first frame update
@@ -53,14 +60,21 @@ public class Player_Main : MonoBehaviour
         instance = this;
         playerMove = GetComponent<PlayerMove>();
         ani = GetComponentInChildren<Animator>();
+        _HP = playerInfo.MaxHP;
+        _AP = playerInfo.MaxAttackPoint;
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {
-        if(UnbeatableTimer >= 0)
+        if(UnbeatableTimer > 0)
         {
-            UnbeatableTimer -= Time.deltaTime; 
+            UnbeatableTimer -= Time.deltaTime;
+            //Debug.Log(UnbeatableTimer); 
         }    
 
     }
@@ -74,14 +88,15 @@ public class Player_Main : MonoBehaviour
         return gameObject.layer;
     }
 
-    public void Hit(int damage = 1)
+    public bool Hit(int damage = 1)
     {
-        if(UnbeatableTimer <=0)
+        int prevHP = HP;
+        HP -= damage;
+        if(prevHP == HP)
         {
-            UnbeatableTimer = UnbeatableTime;
-            HP -= damage;
+            return false;
         }
-
+        return true;
     }
     public void GameOver()
     {
