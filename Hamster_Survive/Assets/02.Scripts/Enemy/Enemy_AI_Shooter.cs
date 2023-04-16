@@ -15,7 +15,7 @@ public class Enemy_AI_Shooter: Enemy_AI_Base
         {
             mDir *= 0.9f;
         }
-        if (m_attackTimer <= 0 && GetDistance() <= m_attackDistance)
+        if (HP > 0&& m_attackTimer <= 0 && GetDistance() <= m_attackDistance )
         {
             Attack();
         }
@@ -24,6 +24,7 @@ public class Enemy_AI_Shooter: Enemy_AI_Base
     {
         base.Attack();
         Enemy_Movement.Shoot(arrowType,mDir,transform.position);
+        
 
     }
     public override void Init()
@@ -31,6 +32,8 @@ public class Enemy_AI_Shooter: Enemy_AI_Base
         id = ObjPoolTypes.Enemy_AI_Shooter;
         m_attackDistance = 10.0f;
         m_attackCoolDown = 0.5f;
+        HP = 10;
+        
     }
 
     

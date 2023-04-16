@@ -16,7 +16,8 @@ public class Enemy_DB : MonoBehaviour
     [SerializeField] private GameObject enemy_Shooter;
     [SerializeField] private GameObject enemy_Boss;
     [SerializeField] private GameObject Arrow_Base;
-
+    [SerializeField] private GameObject Player_Projectiles;
+    [SerializeField] private GameObject Boss_Arrow;
 
     [SerializeField] private GameObject OP;
 
@@ -42,6 +43,8 @@ public class Enemy_DB : MonoBehaviour
         InitOP(enemy_Shooter, 100);
         InitOP(enemy_Melee, 100);
         InitOP(enemy_Boss, 100);
+        InitOP(Player_Projectiles, 100);
+        InitOP(Boss_Arrow, 100);
     }
 
 

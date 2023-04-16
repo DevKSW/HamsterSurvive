@@ -10,6 +10,8 @@ public enum ObjPoolTypes
     Enemy_AI_Melee,
     Enemy_AI_Boss,
     Enemy_Arrow,
+    Boss_Arrow,
+    Player_Projectiles,
     End
     
 }

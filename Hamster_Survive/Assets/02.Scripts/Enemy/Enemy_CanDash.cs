@@ -43,10 +43,9 @@ public class Enemy_CanDash:Enemy_AI_Base
         {
             tDashTimer -= Time.deltaTime;
         }
-        else
+        else if (HP > 0)
         {
             speed = mOriginSpeed;
-            mDirIsFixed = false;
         }
 
     }
@@ -55,6 +54,7 @@ public class Enemy_CanDash:Enemy_AI_Base
     {
         if (tDashCoolDownTimer <= 0)
         {
+            ani.SetTrigger("Dash");
             tDashCoolDownTimer = tDashCoolDownTime;
             tDashTimer = tDashTime;
             speed = power;

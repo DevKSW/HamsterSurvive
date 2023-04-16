@@ -13,22 +13,29 @@ public class Player_Main : MonoBehaviour
     private int _AP;
 
 
+
     private int HP
     {
         get { return _HP; }
         set {
-            if (UnbeatableTimer <= 0)
+            if(value > _HP)
             {
-                UnbeatableTimer = UnbeatableTime;
+                _HP = value;
+            }
+            else if (CanBeatable)
+            {
+                CanBeatable = false;
                 Debug.Log(_HP);
-                if (value <= 0)
+
+                switch (value)
                 {
-                    ani.SetTrigger("Dead");
-                }
-                else
-                {
-                    ani.SetTrigger("Hit");
-                    _HP = value;
+                    case <= 0:
+                        ani.SetTrigger("Dead");
+                        break;
+                    default:
+                        ani.SetTrigger("Hit");
+                        _HP = value;
+                        break;
                 }
 
             }
@@ -46,9 +53,15 @@ public class Player_Main : MonoBehaviour
     }
     
 
-    private double UnbeatableTimer = 0 ;
+    private double AttackTimer = 0;
+    [Header("플레이어 공격 스테이터스")]
+    public double AttackRate = 0.3;
+    public float AttackRadius = 10.0f;
+    [SerializeField] private Transform firePoint;
+
+
     [Header("플레이어 무적 시간")]
-    [SerializeField]private double UnbeatableTime = 1.0f;
+    public bool CanBeatable = true;
 
     [Header("Renderer")]
     public SpriteRenderer render;
@@ -71,11 +84,16 @@ public class Player_Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(UnbeatableTimer > 0)
+        if(AttackTimer > 0)
         {
-            UnbeatableTimer -= Time.deltaTime;
+            AttackTimer -= Time.deltaTime;
             //Debug.Log(UnbeatableTimer); 
-        }    
+        }
+        else
+        {
+            AttackTimer = AttackRate;
+            Attack();
+        }
 
     }
 
@@ -98,6 +116,29 @@ public class Player_Main : MonoBehaviour
         }
         return true;
     }
+    private void Attack()
+    {
+        Collider2D[] Enemys = Physics2D.OverlapCircleAll(transform.position,AttackRadius);
+
+        if (Enemys != null)
+        {
+            foreach (Collider2D enemy in Enemys)
+            {
+                Enemy_AI_Base enemy_AI;
+                if (enemy.TryGetComponent<Enemy_AI_Base>(out enemy_AI))
+                {
+                    Vector3 tDir = enemy.transform.position + (Vector3.down * 0.3f) - firePoint.position;
+                    GameObject tArrow = Enemy_DB.instance.GetObj(ObjPoolTypes.Player_Projectiles);
+                    tArrow.transform.position = firePoint.position;
+                    ani.SetTrigger("Attack");
+                    tArrow.GetComponent<Player_Projectiles>().Shoot(tDir);
+                    break;
+                }
+            }
+        }
+
+    }
+
     public void GameOver()
     {
         Debug.Log("Game Over!");

@@ -6,7 +6,8 @@ public class Enemy_Arrow : CanOP
 {
     private float _speed = 4.0f;
     private float timer  = 5.0f;
-    
+
+    [SerializeField] private ObjPoolTypes ID = ObjPoolTypes.Enemy_Arrow;
 
     public float speed
     {
@@ -19,11 +20,6 @@ public class Enemy_Arrow : CanOP
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Player Hit ! (Arrow) ");
-        
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //collision.enabled = false; 
     }
 
     private void FixedUpdate()
@@ -51,7 +47,7 @@ public class Enemy_Arrow : CanOP
     
     public override void Init()
     {
-        id = ObjPoolTypes.Enemy_Arrow;
+        id = ID;
         dir = Vector3.zero;
         timer = 5.0f;
     }

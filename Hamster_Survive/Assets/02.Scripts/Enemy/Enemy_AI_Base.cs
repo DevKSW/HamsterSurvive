@@ -39,13 +39,17 @@ public  class Enemy_AI_Base : CanOP
 
     private int AP = 1;
     private int _HP;
-    private int HP
+    public int HP
     {
         get { return _HP; }
         set { 
             if (value <= 0)
             {
-                ani.SetTrigger("DEAD");
+                mDirIsFixed = true;
+                _mDir = Vector3.zero;
+                ani.GetBehaviour<Enemy_Destroy>().SetAI(this);
+                ani.SetTrigger("Dead");
+                
             }else if (value >= _HP)
             {
                 _HP = value;
@@ -74,9 +78,16 @@ public  class Enemy_AI_Base : CanOP
     }
     protected virtual void Update()
     {
-        mDir = GetDir();
-        
         TimerCoolDown();
+        mDir = GetDir();
+        if(mDir.x < 0)
+        {
+            transform.rotation = new Quaternion(0, 0, 0, 1);
+        }else if(mDir.x > 0)
+        {
+            transform.rotation = new Quaternion(0,180,0,1);
+        }
+        
         
         
 
@@ -86,7 +97,6 @@ public  class Enemy_AI_Base : CanOP
         
     private void OnTriggerStay2D(Collider2D collision)
     {
-        
         if (Player_Main.instance.Hit(1))
         {
             Debug.Log("Hit(Base)");
@@ -115,11 +125,14 @@ public  class Enemy_AI_Base : CanOP
         m_attackTimer = m_attackCoolDown;
 
         id = ObjPoolTypes.Enemy_AI_Base;
+
+        HP = 5;
     }
     
     protected virtual void Attack()
     {
         m_attackTimer = m_attackCoolDown;
+        ani.SetTrigger("Attack");
     }
     protected virtual void TimerCoolDown()
     {
@@ -129,6 +142,21 @@ public  class Enemy_AI_Base : CanOP
         }
         
 
+    }
+    public void Return()
+    {
+        this.gameObject.SetActive(false);
+        Enemy_DB.instance.ReturnObj(gameObject);
+    }
+    public void FalseDirFixed()
+    {
+        mDirIsFixed = false;
+    }
+
+    public void Stop()
+    {
+        mDirIsFixed = true;
+        _mDir = Vector3.zero;
     }
 
 }

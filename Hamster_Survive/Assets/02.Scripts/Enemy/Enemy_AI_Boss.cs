@@ -17,16 +17,16 @@ public class Enemy_AI_Boss : Enemy_CanDash
 
     protected override void Update()
     {
+        base.Update();
         if (m_attackTimer <= 0 && GetDistance() <= m_attackDistance)
         {
             Attack();
         }
-        base.Update();
-        if (GetDistance() >= 2)
-        {
-            Dash(10);
-            //LazerStart(Player_Main.instance.GetPos());
-        }
+        //if (GetDistance() >= 2)
+        //{
+        //    //Dash(10);
+        //    //LazerStart(Player_Main.instance.GetPos());
+        //}
 
     }
     /*private void LazerStart(Vector3 tPos)
@@ -45,6 +45,8 @@ public class Enemy_AI_Boss : Enemy_CanDash
     protected override void Attack()
     {
         base.Attack();
+        Debug.Log("Tryid");
+        Enemy_Movement.Shoot(ObjPoolTypes.Boss_Arrow, mDir, transform.position);
         
     }
     public override void Init()
@@ -52,7 +54,8 @@ public class Enemy_AI_Boss : Enemy_CanDash
         base.Init();
         id = ObjPoolTypes.Enemy_AI_Boss;
         tDashTime = 0.75f;
-        tDashCoolDownTime = 2.0f;
+        tDashCoolDownTime = 5.0f;
+        m_attackDistance = 10.0f;
     }
 
 }

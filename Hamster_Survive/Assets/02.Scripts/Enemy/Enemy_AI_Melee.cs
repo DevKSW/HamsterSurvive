@@ -6,7 +6,9 @@ public class Enemy_AI_Melee : Enemy_AI_Base
 {
     float mMotionTime = 0.5f;
     float mMotionTimer = 0.0f;
-    [SerializeField] private Transform attackRange;
+    GameObject Punch = null;
+
+
 
     protected override void Update()
     {
@@ -14,8 +16,6 @@ public class Enemy_AI_Melee : Enemy_AI_Base
         if (mMotionTimer <= 0)
         {
             mMotionTimer = mMotionTime;
-            attackRange.GetComponent<SpriteRenderer>().enabled = false;
-            mDirIsFixed = false;
             Enemy_Movement.AreaAttack(0, m_attackDistance - 1.0f, transform.position);
         }
         if (m_attackTimer <= 0 && GetDistance() <= m_attackDistance)
@@ -29,10 +29,7 @@ public class Enemy_AI_Melee : Enemy_AI_Base
         
         
         if(mMotionTimer > 0)
-        {
-            ani.SetTrigger("Attack");
-            attackRange.localScale = Vector3.one * m_attackDistance * 2;
-            attackRange.GetComponent<SpriteRenderer>().enabled = true;
+        {            
             mDir = Vector3.zero;
             mDirIsFixed = true;
         }
@@ -61,11 +58,18 @@ public class Enemy_AI_Melee : Enemy_AI_Base
         }
     }
 
+    protected override void Awake()
+    {
+        base.Awake();
+        ani.GetBehaviour<Melee_Attack_End>().SetAI(this);
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, m_attackDistance-1.0f);
     }
 
+    
 
 }

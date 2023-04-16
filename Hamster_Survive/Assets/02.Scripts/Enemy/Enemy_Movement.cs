@@ -6,14 +6,17 @@ public class Enemy_Movement
 { 
     public static void Shoot(ObjPoolTypes tType , Vector3 tDir , Vector3 tPos)
     {
-        GameObject tArrow = Enemy_DB.instance.GetObj(tType);
-        if (tArrow != null)
+        if (tDir != Vector3.zero)
         {
-            Enemy_Arrow arrow;
-            if (tArrow.TryGetComponent<Enemy_Arrow>(out arrow))
+            GameObject tArrow = Enemy_DB.instance.GetObj(tType);
+            if (tArrow != null)
             {
-                arrow.transform.position = tPos;
-                arrow.Shoot(tDir);
+                Enemy_Arrow arrow;
+                if (tArrow.TryGetComponent<Enemy_Arrow>(out arrow))
+                {
+                    arrow.transform.position = tPos;
+                    arrow.Shoot(tDir);
+                }
             }
         }
     }
