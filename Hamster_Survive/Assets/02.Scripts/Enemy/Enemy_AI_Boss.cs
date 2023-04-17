@@ -12,7 +12,8 @@ public class Enemy_AI_Boss : Enemy_CanDash
 
     protected override void Start()
     {
-        
+        base.Start();
+        HP = 20;
     }
 
     protected override void Update()
@@ -22,11 +23,10 @@ public class Enemy_AI_Boss : Enemy_CanDash
         {
             Attack();
         }
-        //if (GetDistance() >= 2)
-        //{
-        //    //Dash(10);
-        //    //LazerStart(Player_Main.instance.GetPos());
-        //}
+        
+        Dash(10);
+        //LazerStart(Player_Main.instance.GetPos());
+        
 
     }
     /*private void LazerStart(Vector3 tPos)
