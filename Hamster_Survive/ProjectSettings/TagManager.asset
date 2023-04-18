@@ -25,7 +25,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Buildings
   - 
   - 
   - 
@@ -47,9 +47,15 @@ TagManager:
   - name: Object
     uniqueID: 329364923
     locked: 0
+  - name: Projectiles
+    uniqueID: 142265239
+    locked: 0
   - name: Enemy
     uniqueID: 409063801
     locked: 0
   - name: Player
     uniqueID: 792037235
+    locked: 0
+  - name: Bulidings
+    uniqueID: 2209022459
     locked: 0

@@ -35,11 +35,24 @@ public class PlayerMove : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
+
+        if (tr.position.y >= 11 || tr.position.y <= -10.7)
+        {
+            float y = tr.position.y > 0 ? 10.98f : -10.68f;
+            tr.position = new Vector3(tr.position.x, y);
+            vertical = 0 ;
+        }
+        if (tr.position.x >= 19.5 || tr.position.x <= -19.5)
+        {
+            float x = tr.position.x > 0 ? 19.48f : -19.48f;
+            tr.position = new Vector3(x, tr.position.y);
+            horizontal = 0;
+
+        }
+
         move = new Vector2(horizontal, vertical);
-        
-        
-        
-        if(horizontal > 0)
+
+        if (horizontal > 0)
         {
             Player_Main.instance.render.flipX = true;
         }
