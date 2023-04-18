@@ -60,6 +60,6 @@ public class Player_Projectiles: CanOP
     {
         id = ObjPoolTypes.Player_Projectiles;
         dir = Vector3.zero;
-        timer = 5.0f;
+        timer = 60.0f;
     }
 }

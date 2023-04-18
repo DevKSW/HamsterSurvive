@@ -90,10 +90,14 @@ public class Player_Main : MonoBehaviour
             AttackTimer -= Time.deltaTime;
             //Debug.Log(UnbeatableTimer); 
         }
-        else
+        else if (Input.GetMouseButton(0))
         {
+            Vector3 tMousePos =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 tDir = tMousePos - transform.position;
+            tDir.z = 0;
+            Debug.Log(tDir);
             AttackTimer = AttackRate;
-            Attack();
+            Attack(tDir.normalized);
         }
 
     }
@@ -117,27 +121,16 @@ public class Player_Main : MonoBehaviour
         }
         return true;
     }
-    private void Attack()
+
+
+    private void Attack(Vector3 tDir)
     {
-        Collider2D[] Enemys = Physics2D.OverlapCircleAll(transform.position,AttackRadius);
-
-        if (Enemys != null)
-        {
-            foreach (Collider2D enemy in Enemys)
-            {
-                Enemy_AI_Base enemy_AI;
-                if (enemy.TryGetComponent<Enemy_AI_Base>(out enemy_AI))
-                {
-                    Vector3 tDir = enemy.transform.position + (Vector3.down * 0.3f) - firePoint.position;
-                    GameObject tArrow = Enemy_DB.instance.GetObj(ObjPoolTypes.Player_Projectiles);
-                    tArrow.transform.position = firePoint.position;
-                    ani.SetTrigger("Attack");
-                    tArrow.GetComponent<Player_Projectiles>().Shoot(tDir,AP);
-                    break;
-                }
-            }
-        }
-
+        //tDir -= firePoint.position;
+        GameObject tArrow = Enemy_DB.instance.GetObj(ObjPoolTypes.Player_Projectiles);
+        tArrow.transform.position = firePoint.position;
+        ani.SetTrigger("Attack");
+        tArrow.GetComponent<Player_Projectiles>().Shoot(tDir,AP);
+        
     }
 
     public void GameOver()
