@@ -3444,7 +3444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3809843309697658964, guid: 69c7731f84f3e244ea6711ecb8cbbc8e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69c7731f84f3e244ea6711ecb8cbbc8e, type: 3}
@@ -4293,6 +4293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1791046491}
   - component: {fileID: 1791046490}
+  - component: {fileID: 1791046492}
   m_Layer: 0
   m_Name: DB's
   m_TagString: Untagged
@@ -4335,6 +4336,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1791046492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791046489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f9b95c4da2a0547b8a052be3ce6aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Distance: 10
+  SpawnTime: 1
 --- !u!95 &4290328172259304238
 Animator:
   serializedVersion: 4
@@ -4416,7 +4431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5422327126687232787, guid: cb4cf060494ad9342bd93b9deca5f001, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 68301947093978683, guid: cb4cf060494ad9342bd93b9deca5f001, type: 3}

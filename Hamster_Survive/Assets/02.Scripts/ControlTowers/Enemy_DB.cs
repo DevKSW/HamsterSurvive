@@ -42,7 +42,7 @@ public class Enemy_DB : MonoBehaviour
         InitOP(Arrow_Base,500);
         InitOP(enemy_Shooter, 100);
         InitOP(enemy_Melee, 100);
-        InitOP(enemy_Boss, 100);
+        InitOP(enemy_Boss, 1);
         InitOP(Player_Projectiles, 100);
         InitOP(Boss_Arrow, 100);
     }

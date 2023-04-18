@@ -95,7 +95,6 @@ public class Player_Main : MonoBehaviour
             Vector3 tMousePos =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 tDir = tMousePos - transform.position;
             tDir.z = 0;
-            Debug.Log(tDir);
             AttackTimer = AttackRate;
             Attack(tDir.normalized);
         }
