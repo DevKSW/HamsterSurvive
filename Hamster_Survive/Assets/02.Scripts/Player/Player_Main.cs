@@ -75,6 +75,7 @@ public class Player_Main : MonoBehaviour
         ani = GetComponentInChildren<Animator>();
         _HP = playerInfo.MaxHP;
         _AP = playerInfo.MaxAttackPoint;
+        AP = 0;
     }
 
     private void FixedUpdate()
@@ -131,7 +132,7 @@ public class Player_Main : MonoBehaviour
                     GameObject tArrow = Enemy_DB.instance.GetObj(ObjPoolTypes.Player_Projectiles);
                     tArrow.transform.position = firePoint.position;
                     ani.SetTrigger("Attack");
-                    tArrow.GetComponent<Player_Projectiles>().Shoot(tDir);
+                    tArrow.GetComponent<Player_Projectiles>().Shoot(tDir,AP);
                     break;
                 }
             }

@@ -42,17 +42,18 @@ public  class Enemy_AI_Base : CanOP
     public int HP
     {
         get { return _HP; }
-        set { 
-            if (value <= 0)
+        set {
+            if (value >= _HP)
+            {
+                _HP = value;
+            }
+            else if (value <= 0)
             {
                 mDirIsFixed = true;
                 _mDir = Vector3.zero;
                 ani.GetBehaviour<Enemy_Destroy>().SetAI(this);
                 ani.SetTrigger("Dead");
-                
-            }else if (value >= _HP)
-            {
-                _HP = value;
+
             }
             else
             {

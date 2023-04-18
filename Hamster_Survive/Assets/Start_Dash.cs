@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Melee_Attack_End : Enemy_Ani_StateMch
+public class Start_Dash : StateMachineBehaviour
 {
-
+    protected Enemy_CanDash AI;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
@@ -20,7 +20,7 @@ public class Melee_Attack_End : Enemy_Ani_StateMch
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        AI.FalseDirFixed();
+        AI.StartDash();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
@@ -35,5 +35,9 @@ public class Melee_Attack_End : Enemy_Ani_StateMch
     //    // Implement code that sets up animation IK (inverse kinematics)
     //}
 
+    public void SetAI(Enemy_CanDash tAI)
+    {
+        AI = tAI;
+    }
 
 }
