@@ -73,7 +73,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  attackRange: {fileID: 0}
 --- !u!1 &4879906703181756384
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +146,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 409063801
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1679204783, guid: c647186fcbf120442a12f5f59cc63083, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

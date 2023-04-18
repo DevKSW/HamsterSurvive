@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: cc7c1876c7e0d6c41b7e0618f1a2f889
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: City Buildings_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1798
+        width: 472
+        height: 462
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32646878cdcb3b14e8d17da5eb3d62da
+      internalID: -1032190301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_1
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 1798
+        width: 315
+        height: 462
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe8764d601177a149ac8dc1024f0faa4
+      internalID: 1078155108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_2
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 1798
+        width: 275
+        height: 462
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82245592a4240a4490ac2f9a03fdebf
+      internalID: -1261232845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_3
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 1798
+        width: 934
+        height: 462
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f924dea6e61c085489c3710f4027f869
+      internalID: 1044595273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_4
+      rect:
+        serializedVersion: 2
+        x: 2647
+        y: 1798
+        width: 286
+        height: 462
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf288d92f3d5d641ab75aa7351582df
+      internalID: 465136182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_5
+      rect:
+        serializedVersion: 2
+        x: 3097
+        y: 1798
+        width: 265
+        height: 462
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc89cf724fdae24ea8c7cee6085a843
+      internalID: -2072721757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_6
+      rect:
+        serializedVersion: 2
+        x: 3528
+        y: 1798
+        width: 472
+        height: 462
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f1eadeebb272342b1903a2e1783662
+      internalID: -1944461611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 493
+        height: 1064
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192aaeff6cd04b847afea5fc68d2a2ab
+      internalID: -1190849378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_8
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 648
+        width: 305
+        height: 1035
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2f30004b9d80a409919ff5b5839be1
+      internalID: -1371855277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_9
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 648
+        width: 315
+        height: 955
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a211ab893338f24caa1fe2940d9d1d2
+      internalID: 216869184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_10
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 657
+        width: 944
+        height: 955
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f86e48e7bd037d49ac3eb992cab53c8
+      internalID: -102496082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_11
+      rect:
+        serializedVersion: 2
+        x: 2618
+        y: 667
+        width: 315
+        height: 926
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67ecf65626b3863488655e5dfe168113
+      internalID: -1055933189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_12
+      rect:
+        serializedVersion: 2
+        x: 3097
+        y: 687
+        width: 265
+        height: 896
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e223f46e840f3b4c941245159aa53df
+      internalID: -1521746358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_13
+      rect:
+        serializedVersion: 2
+        x: 3538
+        y: 667
+        width: 462
+        height: 916
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caab0f6fa86074e4b8269d24af899e70
+      internalID: -1368844853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 493
+        height: 503
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 780fcb083b4b4de4f9952fc171b4fa35
+      internalID: 134551804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_15
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 0
+        width: 285
+        height: 483
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1978062c1c9b16340820b6dceee8b17c
+      internalID: 457082386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_16
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 0
+        width: 305
+        height: 562
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f0551bc756da67498b3c7fadb04a4d7
+      internalID: 2026746758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_17
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 0
+        width: 944
+        height: 593
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 969389a290b8d224aafe1dcd2d4e9717
+      internalID: 104411420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_18
+      rect:
+        serializedVersion: 2
+        x: 2638
+        y: 0
+        width: 295
+        height: 562
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57956318579942b4e857c553df48482f
+      internalID: -806781809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_19
+      rect:
+        serializedVersion: 2
+        x: 3097
+        y: 0
+        width: 265
+        height: 462
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce40f00a4cbd964f85d1ace7e3e51bb
+      internalID: -849904597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: City Buildings_20
+      rect:
+        serializedVersion: 2
+        x: 3548
+        y: 0
+        width: 452
+        height: 503
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23be292a85221d242b0618e8728bacad
+      internalID: -694653921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      City Buildings_0: -1032190301
+      City Buildings_17: 104411420
+      City Buildings_19: -849904597
+      City Buildings_1: 1078155108
+      City Buildings_10: -102496082
+      City Buildings_15: 457082386
+      City Buildings_6: -1944461611
+      City Buildings_13: -1368844853
+      City Buildings_14: 134551804
+      City Buildings_18: -806781809
+      City Buildings_20: -694653921
+      City Buildings_4: 465136182
+      City Buildings_8: -1371855277
+      City Buildings_16: 2026746758
+      City Buildings_7: -1190849378
+      City Buildings_5: -2072721757
+      City Buildings_12: -1521746358
+      City Buildings_11: -1055933189
+      City Buildings_2: -1261232845
+      City Buildings_3: 1044595273
+      City Buildings_9: 216869184
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

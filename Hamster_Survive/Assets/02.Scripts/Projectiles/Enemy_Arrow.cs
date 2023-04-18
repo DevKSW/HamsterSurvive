@@ -6,7 +6,7 @@ public class Enemy_Arrow : CanOP
 {
     private float _speed = 4.0f;
     private float timer  = 5.0f;
-
+    [SerializeField] public int damage = 1;
     [SerializeField] private ObjPoolTypes ID = ObjPoolTypes.Enemy_Arrow;
 
     public float speed
@@ -19,7 +19,14 @@ public class Enemy_Arrow : CanOP
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Player Hit ! (Arrow) ");
+        PlayerMove tPlayer;
+        if(collision != null && collision.TryGetComponent<PlayerMove>(out tPlayer))
+        {
+            Debug.Log("Player Hit ! (Arrow) ");
+            Player_Main.instance.Hit(damage);
+            Enemy_DB.instance.ReturnObj(this.gameObject);
+        }
+
     }
 
     private void FixedUpdate()

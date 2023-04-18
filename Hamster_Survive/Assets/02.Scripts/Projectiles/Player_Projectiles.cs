@@ -43,8 +43,8 @@ public class Player_Projectiles: CanOP
         if(collision.transform.TryGetComponent<Enemy_AI_Base>(out tEnemy))
         {
             tEnemy.HP -= damage;
+            Enemy_DB.instance.ReturnObj(this.gameObject);
         }
-        Enemy_DB.instance.ReturnObj(this.gameObject);
     }
 
     public void Shoot(Vector3 tDir, int tDamage = 1)

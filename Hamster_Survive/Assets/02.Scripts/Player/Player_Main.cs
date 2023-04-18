@@ -75,7 +75,7 @@ public class Player_Main : MonoBehaviour
         ani = GetComponentInChildren<Animator>();
         _HP = playerInfo.MaxHP;
         _AP = playerInfo.MaxAttackPoint;
-        AP = 0;
+        AP = 1;
     }
 
     private void FixedUpdate()
