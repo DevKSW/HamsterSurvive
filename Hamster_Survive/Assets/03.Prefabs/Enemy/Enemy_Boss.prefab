@@ -179,6 +179,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  MaxHP: 20
+  MaxAttack: 2
+  m_attackDistance: 10
+  m_attackCoolDown: 0.5
   lineRenderer: {fileID: 8481947758924748624}
 --- !u!60 &8132536831017878212
 PolygonCollider2D:
@@ -284,7 +288,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 409063801
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 4
   m_Sprite: {fileID: -1887142036, guid: bad839b420fe90241a256a95fa634224, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
