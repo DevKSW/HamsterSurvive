@@ -18,7 +18,7 @@ public class Enemy_CanDash:Enemy_AI_Base
     protected override void Awake()
     {
         base.Awake();
-        ani.GetBehaviour<Melee_Attack_End>().SetAI(this);
+        ani.GetBehaviour<FalseDir_Ani>().SetAI(this);
         ani.GetBehaviour<Start_Dash>().SetAI(this);
         ani.SetFloat("Dash_Time", 1.4f * tDashTime);
     }

@@ -73,7 +73,7 @@ public class Enemy_DB : MonoBehaviour
 
             for (int i = 0; i < length; i++)
             {
-                GameObject tObj = Instantiate(tOrigin,OPs[tID]);
+                GameObject tObj = Instantiate(tOrigin,OPs[tID]); 
                 //tObj.GetComponent<CanOP>().Init();
                 tObj.name = tOrigin.name + i;
                 tObj.SetActive(false);

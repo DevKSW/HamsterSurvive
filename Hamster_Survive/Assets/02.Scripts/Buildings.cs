@@ -56,7 +56,7 @@ public class Buildings : MonoBehaviour
         {
             mColor = Color.white;
             mNowColor = 1.0f;
-            Debug.Log("Out" + collision.gameObject.name);
+            //Debug.Log("Out" + collision.gameObject.name);
         }
     }
 

@@ -37,7 +37,7 @@ public  class Enemy_AI_Base : CanOP
     protected float m_attackCoolDown = 0.5f;
     protected float m_attackTimer = 0f;
 
-    private int AP = 1;
+    protected int AP = 1;
     private int _HP;
     public int HP
     {
@@ -127,7 +127,10 @@ public  class Enemy_AI_Base : CanOP
 
         id = ObjPoolTypes.Enemy_AI_Base;
 
-        HP = 5;
+        HP = 3;
+
+        mDirIsFixed = false;
+
     }
     
     protected virtual void Attack()

@@ -135,6 +135,11 @@ public class Player_Main : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game Over!");
+        ScoreManager.instance.Stop = true;
+        playerMove.enabled = false;
+        this.enabled = false;
+
+
     }
 
 }

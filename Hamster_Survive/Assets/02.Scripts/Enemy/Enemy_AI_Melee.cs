@@ -6,17 +6,16 @@ public class Enemy_AI_Melee : Enemy_AI_Base
 {
     float mMotionTime = 0.5f;
     float mMotionTimer = 0.0f;
-    GameObject Punch = null;
+    [SerializeField] Punch mPunch = null;
 
-
-
+    
     protected override void Update()
     {
         base.Update();
         if (mMotionTimer <= 0)
         {
             mMotionTimer = mMotionTime;
-            Enemy_Movement.AreaAttack(0, m_attackDistance - 1.0f, transform.position);
+            //Enemy_Movement.AreaAttack(0, m_attackDistance - 1.0f, transform.position);
         }
         if (m_attackTimer <= 0 && GetDistance() <= m_attackDistance)
         {
@@ -32,6 +31,9 @@ public class Enemy_AI_Melee : Enemy_AI_Base
         {            
             mDir = Vector3.zero;
             mDirIsFixed = true;
+
+            Vector3 tDir = GetDir();
+            mPunch.Attack(tDir);
         }
         
     }
@@ -41,8 +43,8 @@ public class Enemy_AI_Melee : Enemy_AI_Base
     {
         base.Init();
         id = ObjPoolTypes.Enemy_AI_Melee;
-        m_attackDistance = 3.0f;
-        m_attackCoolDown = 0.1f;
+        m_attackDistance = 1.9f;
+        m_attackCoolDown = 1.0f;
         mMotionTime = 1.0f;
         mMotionTimer = mMotionTime;
         speed = 2.0f;
@@ -61,13 +63,17 @@ public class Enemy_AI_Melee : Enemy_AI_Base
     protected override void Awake()
     {
         base.Awake();
-        ani.GetBehaviour<Melee_Attack_End>().SetAI(this);
+        mPunch = GetComponentInChildren<Punch>();
+    }
+    private void Start()
+    {
+        ani.GetBehaviour<FalseDir_Ani>().SetAI(this);
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, m_attackDistance-1.0f);
+        Gizmos.DrawWireSphere(transform.position, m_attackDistance);
     }
 
     

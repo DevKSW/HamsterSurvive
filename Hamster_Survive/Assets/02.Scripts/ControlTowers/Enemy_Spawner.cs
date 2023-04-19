@@ -47,7 +47,7 @@ public class Enemy_Spawner : MonoBehaviour
         RandomTable[0] = ObjPoolTypes.Enemy_AI_Base + Random.Range(0, 2); 
 
 
-        for (ObjPoolTypes i = ObjPoolTypes.Enemy_AI_Base; i < ObjPoolTypes.Enemy_AI_Melee; i++)
+        for (ObjPoolTypes i = ObjPoolTypes.Enemy_AI_Base; i < ObjPoolTypes.Enemy_AI_Boss; i++)
         {
             int tCount = 0;
             while (tCount < 33)
@@ -69,7 +69,7 @@ public class Enemy_Spawner : MonoBehaviour
         int tIndex = Random.Range(0, 100);
         if(RandomTable[tIndex] != ObjPoolTypes.None)
         {
-            Debug.Log(RandomTable[tIndex].ToString());
+            //Debug.Log(RandomTable[tIndex].ToString());
             Vector2 pos = GetSpawnPos();
             GameObject tEnemy = Enemy_DB.instance.GetObj(RandomTable[tIndex]);
             tEnemy.transform.position = pos;
