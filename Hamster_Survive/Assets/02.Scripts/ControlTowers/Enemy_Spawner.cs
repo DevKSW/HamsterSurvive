@@ -6,9 +6,11 @@ public class Enemy_Spawner : MonoBehaviour
 {
     [SerializeField] float Distance = 10.0f;
 
+    public static Enemy_Spawner Instance;
+
     List<ObjPoolTypes> RandomTable = new List<ObjPoolTypes>();
 
-    [SerializeField] private float SpawnTime = 1;
+    [SerializeField] private float SpawnCoolDown = 2;
     private float spawnTimer = 0;
 
 
@@ -19,7 +21,7 @@ public class Enemy_Spawner : MonoBehaviour
     private void Awake()
     {
         Init();
-        
+        Instance = this;
     }
 
     private void Update()
@@ -30,7 +32,7 @@ public class Enemy_Spawner : MonoBehaviour
         }
         else
         {
-            spawnTimer = SpawnTime;
+            spawnTimer = SpawnCoolDown;
             Spawn();
         }
 
@@ -95,6 +97,16 @@ public class Enemy_Spawner : MonoBehaviour
             }
         }
         return tSpawnPos;
+    }
+
+    public void SpawnBoss()
+    {
+        if (!Enemy_DB.instance.BossSpawned())
+        {
+            Vector2 pos = GetSpawnPos();
+            GameObject tEnemy = Enemy_DB.instance.GetObj(ObjPoolTypes.Enemy_AI_Boss);
+            tEnemy.transform.position = pos;
+        }
     }
 
 

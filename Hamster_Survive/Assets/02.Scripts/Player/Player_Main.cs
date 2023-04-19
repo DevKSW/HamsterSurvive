@@ -12,7 +12,7 @@ public class Player_Main : MonoBehaviour
     private int _HP;
     private int _AP;
 
-
+    [SerializeField] private Transform camera;
 
     private int HP
     {
@@ -37,6 +37,7 @@ public class Player_Main : MonoBehaviour
                         _HP = value;
                         break;
                 }
+                PlayerHP_UI.instance.SetHP(value);
 
             }
         }
@@ -77,7 +78,10 @@ public class Player_Main : MonoBehaviour
         _AP = playerInfo.MaxAttackPoint;
         AP = 1;
     }
-
+    private void Start()
+    {
+        
+    }
     private void FixedUpdate()
     {
         
@@ -98,6 +102,22 @@ public class Player_Main : MonoBehaviour
             AttackTimer = AttackRate;
             Attack(tDir.normalized);
         }
+
+        //( 11.1 , 6.3)
+        float tX = transform.position.x;
+        float tY = transform.position.y;
+
+        if(transform.position.x >= 10.9f || transform.position.x <= -10.9f)
+        {
+            tX = transform.position.x > 0 ? 11 : -11;
+            //camera.position. = 11.0f;
+        }
+        if(transform.position.y >= 8.2f  || transform.position.y <= -6.2f)
+        {
+            tY = transform.position.y > 0 ? 8.2f : -6.3f;
+        }
+        camera.position = new Vector3 (tX, tY , camera.position.z);
+
 
     }
 

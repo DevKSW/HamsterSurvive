@@ -114,6 +114,15 @@ public class Enemy_DB : MonoBehaviour
         }
     }
 
+    public bool BossSpawned()
+    {
+        if(_enemyList[ObjPoolTypes.Enemy_AI_Boss].Count ==0)
+        {
+            return true;
+        }
+        return false;
+    }
+
     /*public Vector3 GetDir(Vector3 EnemyPos)
     {
         Vector3 dir = Vector3.zero;

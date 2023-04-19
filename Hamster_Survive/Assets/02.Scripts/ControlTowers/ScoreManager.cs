@@ -54,7 +54,7 @@ public class ScoreManager : MonoBehaviour
         int tSecond = ((int)Second);
 
         string tText = Minit.ToString() + "  :  " +  tSecond.ToString();
-
+        
         if (tSecond < 10)
         {
             tText = tText.Insert(tText.Length-1,"0");
@@ -64,7 +64,10 @@ public class ScoreManager : MonoBehaviour
             tText = tText.Insert(0,"0");
         }
 
-
+        if(tSecond != 0 && tSecond % 20 == 0)
+        {
+            Enemy_Spawner.Instance.SpawnBoss();
+        }
 
         mScoreBoard.text = tText;
     }

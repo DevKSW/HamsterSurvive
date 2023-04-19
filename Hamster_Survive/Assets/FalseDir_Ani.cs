@@ -20,7 +20,10 @@ public class FalseDir_Ani : Enemy_Ani_StateMch
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        AI.FalseDirFixed();
+        if(AI != null)
+        {
+            AI.FalseDirFixed();
+        }
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
