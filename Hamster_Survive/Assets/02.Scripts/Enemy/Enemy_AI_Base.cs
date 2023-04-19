@@ -34,7 +34,7 @@ public  class Enemy_AI_Base : CanOP
         }
     }
 
-    protected float m_attackCoolDown = 0.5f;
+    
     protected float m_attackTimer = 0f;
 
     protected int AP = 1;
@@ -64,8 +64,12 @@ public  class Enemy_AI_Base : CanOP
 
     }
 
-    protected float m_attackDistance = 0.0f;
 
+    [Header("Àû ±âº» ½ºÆå")]
+    [SerializeField] private int MaxHP = 0;
+    [SerializeField] private int MaxAttack = 0;
+    [SerializeField] protected float m_attackDistance = 0.0f;
+    [SerializeField] protected float m_attackCoolDown = 0.5f;
 
     protected override void Awake()
     {
@@ -127,7 +131,8 @@ public  class Enemy_AI_Base : CanOP
 
         id = ObjPoolTypes.Enemy_AI_Base;
 
-        HP = 3;
+        HP = MaxHP;
+        AP = MaxHP;
 
         mDirIsFixed = false;
 

@@ -10,7 +10,7 @@ public class PlayerHP_UI : MonoBehaviour
     private PlayerHP[] HPList;
 
 
-    private int mPrevHP = 0;
+    public int mPrevHP = 0;
 
 
     private void Awake()
@@ -19,33 +19,35 @@ public class PlayerHP_UI : MonoBehaviour
         {
             instance = this;
         }
-        PlayerHP[] HPList = GetComponentsInChildren<PlayerHP>();
+        HPList = GetComponentsInChildren<PlayerHP>();
         Debug.Log(HPList.Length);
 
     }
 
 
-    //public void InitHp(int tHP)
-    //{
-    //    if(tHP > 5)
-    //    {
-    //        float tLength =  (tHP - 5)/10;
-    //        this.GetComponent<RectTransform>().localScale = new Vector3(tLength,tLength);
-    //    }
-    //
-    //    for (int i = 0; i < tHP; i++)
-    //    {
-    //        GameObject tHPUI = Instantiate(HP_Prefab,GetComponent<RectTransform>());
-    //        HPList.Add(tHPUI.GetComponent<PlayerHP>());
-    //        tHPUI.SetActive(true);
-    //    }
-    //}
-    public void SetHP(int tHP)
+    public void SetHp(int tHP)
     {
-        if(mPrevHP > tHP)
+        if (!(tHP > HPList.Length))
         {
-             HPList[tHP - 1].SetHP(false);
-             mPrevHP = tHP;    
+            mPrevHP = tHP;
+            for (int i = 0; i < tHP; i++)
+            {
+                HPList[i].SetHP(true);
+
+            }
+
+        }
+    }
+    public void FalseHP(int tHP)
+    {
+        if(mPrevHP > tHP && tHP <= HPList.Length)
+        {
+            int tDamge = mPrevHP - tHP;
+            for (int i = 0; i < tDamge; i++)
+            {
+                HPList[tHP - i].SetHP(false);
+            }
+            mPrevHP = tHP;    
         }
 
     }

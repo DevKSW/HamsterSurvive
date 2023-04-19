@@ -5,26 +5,18 @@ using UnityEngine.UI;
 
 public class PlayerHP : MonoBehaviour
 {
-    [SerializeField] private Image EmptyHp;
-    [SerializeField] private Image FullHP;
+    [SerializeField] private GameObject EmptyHp;
+    [SerializeField] private GameObject FullHP;
 
     private void Awake()
     {
-        EmptyHp.enabled = true;
-        FullHP.enabled = true;
+        EmptyHp.SetActive(true);
+        FullHP.SetActive(true) ;
     }
 
     public void SetHP(bool tHP)
     {
-        if (tHP)
-        {
-            FullHP.enabled = true;
-        }
-        else
-        {
-            FullHP.enabled = false;
-        }
-
+        FullHP.SetActive(tHP);
     }
 
 }

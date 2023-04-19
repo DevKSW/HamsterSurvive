@@ -37,7 +37,7 @@ public class Player_Main : MonoBehaviour
                         _HP = value;
                         break;
                 }
-                PlayerHP_UI.instance.SetHP(value);
+                PlayerHP_UI.instance.FalseHP(value);
 
             }
         }
@@ -80,7 +80,7 @@ public class Player_Main : MonoBehaviour
     }
     private void Start()
     {
-        
+        PlayerHP_UI.instance.SetHp(HP);
     }
     private void FixedUpdate()
     {

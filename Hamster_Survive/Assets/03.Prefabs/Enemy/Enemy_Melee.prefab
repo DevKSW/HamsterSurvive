@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b76f82884015c7a449650652b269a686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AP: 1
 --- !u!1 &3282934367412875734
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +252,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  MaxHP: 5
+  MaxAttack: 1
+  m_attackDistance: 1.9
+  m_attackCoolDown: 1
   mPunch: {fileID: 0}
 --- !u!1 &3282934367454657613
 GameObject:
