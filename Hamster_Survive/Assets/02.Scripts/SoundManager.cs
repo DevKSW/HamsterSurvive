@@ -9,11 +9,13 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] AudioSource BGM;
 
-    [SerializeField] List<AudioSource> EffectSounds;
 
     [SerializeField] AudioSource playerAttack;
-    //[SerializeField] AudioSource playerHit;
+    [SerializeField] AudioSource playerHit;
     [SerializeField] AudioSource Result;
+    [SerializeField] AudioSource BossCome;
+
+    [SerializeField] List<AudioSource> EffectSounds;
 
     private void OnEnable()
     {
@@ -47,9 +49,10 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         EffectSounds.Add(playerAttack);
-        //EffectSounds.Add(playerHit);
+        EffectSounds.Add(playerHit);
         EffectSounds.Add(Result);
-        
+        EffectSounds.Add(BossCome);
+
     }
 
     public void BgmSettingChanged(Slider tSlider)
@@ -103,5 +106,12 @@ public class SoundManager : MonoBehaviour
         BGM.Stop();    
         Result.Play();
     }
-
+    public void PlayBossCome()
+    {
+        BossCome.Play();
+    }
+    public void PlayerHit()
+    {
+        playerHit.Play();
+    }
 }

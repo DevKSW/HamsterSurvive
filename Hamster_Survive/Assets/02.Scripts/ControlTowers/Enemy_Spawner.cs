@@ -101,7 +101,11 @@ public class Enemy_Spawner : MonoBehaviour
 
     public void SpawnBoss()
     {
-        BossUIs.instance.PlayBossCome();
+        if (!Enemy_DB.instance.BossSpawned())
+        {
+            SoundManager.instance.PlayBossCome();
+            BossUIs.instance.PlayBossCome();
+        }
     }
 
     public void _SpawnBoss()
