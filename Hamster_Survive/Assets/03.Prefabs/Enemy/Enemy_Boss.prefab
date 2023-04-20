@@ -183,6 +183,7 @@ MonoBehaviour:
   MaxAttack: 2
   m_attackDistance: 10
   m_attackCoolDown: 0.5
+  mOriginSpeed: 2
   lineRenderer: {fileID: 8481947758924748624}
 --- !u!60 &8132536831017878212
 PolygonCollider2D:

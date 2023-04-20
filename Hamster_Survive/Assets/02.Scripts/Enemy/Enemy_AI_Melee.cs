@@ -47,7 +47,7 @@ public class Enemy_AI_Melee : Enemy_AI_Base
         //m_attackCoolDown = 1.0f;
         mMotionTime = 1.0f;
         mMotionTimer = mMotionTime;
-        speed = 2.0f;
+        //speed = 2.0f;
         
 
     }

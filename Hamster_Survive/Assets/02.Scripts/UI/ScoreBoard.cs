@@ -47,7 +47,7 @@ public class ScoreBoard : MonoBehaviour
         int bestSec = DataManager.instance.m_UserData.m_BestScore_Sec;
 
         int tNowScore = (minit * 100) + sec;
-        int tBestScore = (bestMinit * 100) + sec;
+        int tBestScore = (bestMinit * 100) + bestSec;
         
         if(tNowScore >= tBestScore)
         {

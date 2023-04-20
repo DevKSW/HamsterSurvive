@@ -113,14 +113,14 @@ public class Player_Main : MonoBehaviour
         float tX = transform.position.x;
         float tY = transform.position.y;
 
-        if(transform.position.x >= 10.9f || transform.position.x <= -10.9f)
+        if(transform.position.x >= 11f || transform.position.x <= -11f)
         {
-            tX = transform.position.x > 0 ? 11 : -11;
+            tX = transform.position.x > 0 ? 10.98f : -10.98f;
             //camera.position. = 11.0f;
         }
-        if(transform.position.y >= 8.2f  || transform.position.y <= -6.2f)
+        if(transform.position.y >= 8.3f  || transform.position.y <= -6.3f)
         {
-            tY = transform.position.y > 0 ? 8.2f : -6.3f;
+            tY = transform.position.y > 0 ? 8.28f : -6.28f;
         }
         camera.position = new Vector3 (tX, tY , camera.position.z);
 
