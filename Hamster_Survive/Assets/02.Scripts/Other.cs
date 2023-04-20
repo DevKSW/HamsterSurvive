@@ -16,10 +16,11 @@ public enum ObjPoolTypes
     
 }
 
+[SerializeField]
 public class Info{
-    public int MaxAttackPoint;
-    public int MaxHP;
-    public int MaxSpeed;
+    [SerializeField] public int MaxAttackPoint;
+    [SerializeField] public int MaxHP;
+    [SerializeField] public int MaxSpeed;
 
     public Info(int tAP =1 , int tHP = 5 , int tSpeed = 1)
     {

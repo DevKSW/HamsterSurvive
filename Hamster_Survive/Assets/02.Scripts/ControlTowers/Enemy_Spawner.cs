@@ -101,6 +101,11 @@ public class Enemy_Spawner : MonoBehaviour
 
     public void SpawnBoss()
     {
+        BossUIs.instance.PlayBossCome();
+    }
+
+    public void _SpawnBoss()
+    {
         if (!Enemy_DB.instance.BossSpawned())
         {
             Vector2 pos = GetSpawnPos();
@@ -108,8 +113,6 @@ public class Enemy_Spawner : MonoBehaviour
             tEnemy.transform.position = pos;
         }
     }
-
-
     public ObjPoolTypes GetEnemyEnum(int index)
     {
         return RandomTable[index];

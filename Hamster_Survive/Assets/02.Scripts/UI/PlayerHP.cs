@@ -16,7 +16,10 @@ public class PlayerHP : MonoBehaviour
 
     public void SetHP(bool tHP)
     {
-        FullHP.SetActive(tHP);
+        if (FullHP != null)
+        {
+            FullHP.SetActive(tHP);
+        }
     }
 
 }

@@ -53,13 +53,16 @@ public  class Enemy_AI_Base : CanOP
                 _mDir = Vector3.zero;
                 ani.GetBehaviour<Enemy_Destroy>().SetAI(this);
                 ani.SetTrigger("Dead");
-
+                Dead();
             }
             else
             {
                 _HP = value;
+                HPChanged(_HP,MaxHP);
                 ani.SetTrigger("Hit");
             }
+            
+
         }
 
     }
@@ -136,6 +139,7 @@ public  class Enemy_AI_Base : CanOP
 
         mDirIsFixed = false;
 
+
     }
     
     protected virtual void Attack()
@@ -166,6 +170,14 @@ public  class Enemy_AI_Base : CanOP
     {
         mDirIsFixed = true;
         _mDir = Vector3.zero;
+    }
+    protected virtual void Dead()
+    {
+
+    }
+    protected virtual void HPChanged(int HP , int tMaxHP )
+    {
+
     }
 
 }

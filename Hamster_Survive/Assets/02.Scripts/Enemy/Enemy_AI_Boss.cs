@@ -10,9 +10,14 @@ public class Enemy_AI_Boss : Enemy_CanDash
     private float laseBeamDistance = 10.0f;
     [SerializeField] private LineRenderer lineRenderer;
 
+    private bool IsStarted = false;
+
     protected override void Start()
     {
         base.Start();
+        ani.GetBehaviour<Start_Dash>().SetAI(this);
+        ani.GetBehaviour<FalseDir_Ani>().SetAI(this);
+        IsStarted = true;
         HP = 20;
     }
 
@@ -53,9 +58,24 @@ public class Enemy_AI_Boss : Enemy_CanDash
     {
         base.Init();
         id = ObjPoolTypes.Enemy_AI_Boss;
+        /*if (IsStarted)
+        {
+            ani.GetBehaviour<Start_Dash>().SetAI(this);
+            ani.GetBehaviour<FalseDir_Ani>().SetAI(this);
+        }*/
         tDashTime = 0.75f;
         tDashCoolDownTime = 5.0f;
         m_attackDistance = 10.0f;
+    }
+
+    protected override void Dead()
+    {
+        BossUIs.instance.ActiveBossHPBar(false);
+
+    }
+    protected override void HPChanged(int HP , int MaxHP)
+    {
+        BossUIs.instance.SetBossHPBar(HP,MaxHP);
     }
 
 }
