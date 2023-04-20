@@ -156,7 +156,7 @@ public class Player_Main : MonoBehaviour
         
     }
 
-    public void GameOver()
+    public void GameOverBegin()
     {
         Debug.Log("Game Over!");
         ScoreManager.instance.Stop = true;
@@ -166,6 +166,10 @@ public class Player_Main : MonoBehaviour
         SoundManager.instance.PlayResult();
         ScoreBoard.instance.ActiveScoreBoard();
 
+
+    }
+    public void GameOverEnd()
+    {
 
     }
 
