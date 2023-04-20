@@ -11,6 +11,8 @@ public class ScoreManager : MonoBehaviour
     float Second = 0;
     int Minit = 0;
 
+    [SerializeField] private int BossSpawnCoolDown = 20;
+
     [SerializeField] private Text mScoreBoard;
     public bool Stop = false;
 
@@ -29,7 +31,7 @@ public class ScoreManager : MonoBehaviour
     {
         Second += 1 * Time.fixedDeltaTime;    
     }
-    // Update is called once per frame
+    
     void Update()
     {
         if (!Stop)
@@ -37,9 +39,8 @@ public class ScoreManager : MonoBehaviour
             CalcTime();
             SetText();
         }
-
-
     }
+
     private void CalcTime()
     {
 
@@ -49,6 +50,7 @@ public class ScoreManager : MonoBehaviour
             Minit++;
         }
     }
+
     private void SetText()
     {
         int tSecond = ((int)Second);
@@ -64,7 +66,7 @@ public class ScoreManager : MonoBehaviour
             tText = tText.Insert(0,"0");
         }
 
-        if(tSecond != 0 && tSecond % 20 == 0)
+        if(tSecond != 0 && tSecond % BossSpawnCoolDown == 0)
         {
             Enemy_Spawner.Instance.SpawnBoss();
         }

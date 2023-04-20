@@ -24,6 +24,7 @@ public class Enemy_DB : MonoBehaviour
     private Dictionary<ObjPoolTypes,List<GameObject>> _enemyList = new Dictionary<ObjPoolTypes, List<GameObject>>();
     private Dictionary<ObjPoolTypes, Transform> OPs = new Dictionary<ObjPoolTypes, Transform>();
 
+    private int bossObjNum = 2;
 
     private void Awake()
     {
@@ -42,7 +43,7 @@ public class Enemy_DB : MonoBehaviour
         InitOP(Arrow_Base,500);
         InitOP(enemy_Shooter, 100);
         InitOP(enemy_Melee, 100);
-        InitOP(enemy_Boss, 1);
+        InitOP(enemy_Boss, bossObjNum);
         InitOP(Player_Projectiles, 100);
         InitOP(Boss_Arrow, 100);
     }
@@ -96,6 +97,8 @@ public class Enemy_DB : MonoBehaviour
             tObj.transform.parent = null;
             tObj.SetActive(true);
 
+            tObj.GetComponent<Collider2D>().enabled = true;
+
             return tObj;
 
         }
@@ -116,7 +119,7 @@ public class Enemy_DB : MonoBehaviour
 
     public bool BossSpawned()
     {
-        if(_enemyList[ObjPoolTypes.Enemy_AI_Boss].Count ==0)
+        if(_enemyList[ObjPoolTypes.Enemy_AI_Boss].Count < bossObjNum)
         {
             return true;
         }

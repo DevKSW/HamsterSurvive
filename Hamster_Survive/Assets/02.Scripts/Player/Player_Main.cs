@@ -7,7 +7,10 @@ public class Player_Main : MonoBehaviour
     public static Player_Main instance;
     [SerializeField] private PlayerMove playerMove;
     
-    private Info playerInfo = new Info(1,10,1);
+    //[SerializeField] private Info playerInfo = new Info(1,10,1);
+    [SerializeField] private int MaxHP = 5;
+    [SerializeField] private int MaxDamage = 1;
+
 
     private int _HP;
     private int _AP;
@@ -74,8 +77,8 @@ public class Player_Main : MonoBehaviour
         instance = this;
         playerMove = GetComponent<PlayerMove>();
         ani = GetComponentInChildren<Animator>();
-        _HP = playerInfo.MaxHP;
-        _AP = playerInfo.MaxAttackPoint;
+        _HP = MaxHP;
+        _AP = MaxDamage;
         AP = 1;
     }
     private void Start()
