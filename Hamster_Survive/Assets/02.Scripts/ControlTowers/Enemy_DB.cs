@@ -96,7 +96,7 @@ public class Enemy_DB : MonoBehaviour
 
             tObj.transform.parent = null;
             tObj.SetActive(true);
-
+            tObj.GetComponent<CanOP>().Init();
             tObj.GetComponent<Collider2D>().enabled = true;
 
             return tObj;
@@ -112,7 +112,7 @@ public class Enemy_DB : MonoBehaviour
         {
             _enemyList[tID].Add(tObj);
             tObj.SetActive(false);
-            tObj.GetComponent<CanOP>().Init();
+            //tObj.GetComponent<CanOP>().Init();
             tObj.transform.parent = OPs[tID];
         }
     }

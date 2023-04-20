@@ -10,7 +10,7 @@ public class Enemy_CanDash:Enemy_AI_Base
     float tDashCoolDownTimer = 0;
     float tDashTimer = 0;
 
-    protected float mOriginSpeed = 0;
+    [SerializeField] protected float mOriginSpeed = 0;
     protected float tDashCoolDownTime = 1.0f;
     protected float tDashTime = 0.2f;
     protected Vector3 LastPlayerPos = Vector3.zero;
@@ -35,7 +35,7 @@ public class Enemy_CanDash:Enemy_AI_Base
     public override void Init()
     {
         base.Init();
-        mOriginSpeed = speed;
+        speed = mOriginSpeed ;
     }
     protected override void TimerCoolDown()
     {

@@ -161,6 +161,8 @@ public class Player_Main : MonoBehaviour
         ScoreManager.instance.Stop = true;
         playerMove.enabled = false;
         this.enabled = false;
+        Time.timeScale = 0;
+        ScoreBoard.instance.ActiveScoreBoard();
 
 
     }

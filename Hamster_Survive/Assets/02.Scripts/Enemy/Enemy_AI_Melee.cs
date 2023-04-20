@@ -43,8 +43,8 @@ public class Enemy_AI_Melee : Enemy_AI_Base
     {
         base.Init();
         id = ObjPoolTypes.Enemy_AI_Melee;
-        m_attackDistance = 1.9f;
-        m_attackCoolDown = 1.0f;
+        //m_attackDistance = 1.9f;
+        //m_attackCoolDown = 1.0f;
         mMotionTime = 1.0f;
         mMotionTimer = mMotionTime;
         speed = 2.0f;

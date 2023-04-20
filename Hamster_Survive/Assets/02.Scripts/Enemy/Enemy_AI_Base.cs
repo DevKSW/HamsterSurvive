@@ -69,8 +69,8 @@ public  class Enemy_AI_Base : CanOP
 
 
     [Header("Àû ±âº» ½ºÆå")]
-    [SerializeField] private int MaxHP = 0;
-    [SerializeField] private int MaxAttack = 0;
+    [SerializeField] protected int MaxHP = 0;
+    [SerializeField] protected int MaxAttack = 0;
     [SerializeField] protected float m_attackDistance = 0.0f;
     [SerializeField] protected float m_attackCoolDown = 0.5f;
 

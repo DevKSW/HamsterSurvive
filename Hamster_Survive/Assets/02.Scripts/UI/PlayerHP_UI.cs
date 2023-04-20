@@ -15,10 +15,7 @@ public class PlayerHP_UI : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-        }
+        instance = this;
         HPList = GetComponentsInChildren<PlayerHP>();
         Debug.Log(HPList.Length);
 

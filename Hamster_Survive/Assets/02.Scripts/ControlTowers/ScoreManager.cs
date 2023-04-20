@@ -74,4 +74,13 @@ public class ScoreManager : MonoBehaviour
         mScoreBoard.text = tText;
     }
 
+    public int GetMinit()
+    {
+        return Minit;
+    }
+    public int GetSec()
+    {
+        return (int)Second;
+    }
+
 }
