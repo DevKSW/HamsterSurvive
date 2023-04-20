@@ -20,9 +20,12 @@ public class SoundManager : MonoBehaviour
     private void OnEnable()
     {
         BGM.enabled = true;
+        BGM.volume = DataManager.instance.m_UserData.m_BgmSetting;
+
         foreach (var sound in EffectSounds)
         {
             sound.enabled = true;
+            sound.volume = DataManager.instance.m_UserData.m_EffectSoundSetting;
         }
 
     }
