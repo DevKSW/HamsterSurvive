@@ -103,6 +103,7 @@ public class Player_Main : MonoBehaviour
             Vector3 tDir = tMousePos - transform.position;
             tDir.z = 0;
             AttackTimer = AttackRate;
+            SoundManager.instance.PlayerAttack();
             Attack(tDir.normalized);
         }
 
@@ -162,6 +163,7 @@ public class Player_Main : MonoBehaviour
         playerMove.enabled = false;
         this.enabled = false;
         Time.timeScale = 0;
+        SoundManager.instance.PlayResult();
         ScoreBoard.instance.ActiveScoreBoard();
 
 

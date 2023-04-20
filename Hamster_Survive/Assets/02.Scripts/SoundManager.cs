@@ -94,5 +94,14 @@ public class SoundManager : MonoBehaviour
             }
         }
     }
+    public void PlayerAttack()
+    {
+        playerAttack.Play();
+    }
+    public void PlayResult()
+    {
+        BGM.Stop();    
+        Result.Play();
+    }
 
 }
