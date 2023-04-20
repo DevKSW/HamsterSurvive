@@ -15,9 +15,9 @@ public class SceneChanger : ScriptableObject
 
     public static void EnterGameScene()
     {
-        SceneManager.LoadSceneAsync(InGame);
         SceneManager.UnloadSceneAsync(Start);
-        SceneManager.LoadSceneAsync(UI, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(UI);
+        SceneManager.LoadSceneAsync(InGame,LoadSceneMode.Additive);
         //Scene tInGame = SceneManager.GetSceneByBuildIndex(InGame);
         //Scene tUI = SceneManager.GetSceneByBuildIndex(UI);
 
@@ -29,9 +29,8 @@ public class SceneChanger : ScriptableObject
     }
     public static void ExitGameScene()
     {
-        SceneManager.UnloadSceneAsync(InGame);
         SceneManager.UnloadSceneAsync(UI);
-
+        SceneManager.UnloadSceneAsync(InGame);
         SceneManager.LoadSceneAsync(Start);
         Time.timeScale = 1.0f;
     }
@@ -43,10 +42,10 @@ public class SceneChanger : ScriptableObject
     {
         SceneManager.UnloadSceneAsync(InGame);
 
-        SceneManager.LoadSceneAsync(InGame);
-        SceneManager.LoadSceneAsync(UI, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(UI);
+        SceneManager.LoadSceneAsync(InGame, LoadSceneMode.Additive);
 
-        SceneManager.SetActiveScene(SceneManager.GetSceneAt(InGame));
+        //SceneManager.SetActiveScene(SceneManager.GetSceneAt(InGame));
         Time.timeScale = 1.0f;
     }
     public static void ExitGame()

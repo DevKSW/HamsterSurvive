@@ -33,10 +33,12 @@ public class Player_Main : MonoBehaviour
                 switch (value)
                 {
                     case <= 0:
+                        SoundManager.instance.PlayerHit();
                         ani.SetTrigger("Dead");
                         break;
                     default:
                         ani.SetTrigger("Hit");
+                        SoundManager.instance.PlayerHit();
                         _HP = value;
                         break;
                 }
@@ -103,6 +105,7 @@ public class Player_Main : MonoBehaviour
             Vector3 tDir = tMousePos - transform.position;
             tDir.z = 0;
             AttackTimer = AttackRate;
+            SoundManager.instance.PlayerAttack();
             Attack(tDir.normalized);
         }
 
@@ -155,13 +158,20 @@ public class Player_Main : MonoBehaviour
         
     }
 
-    public void GameOver()
+    public void GameOverBegin()
     {
         Debug.Log("Game Over!");
         ScoreManager.instance.Stop = true;
         playerMove.enabled = false;
         this.enabled = false;
+        
 
+    }
+    public void GameOverEnd()
+    {
+        Time.timeScale = 0;
+        SoundManager.instance.PlayResult();
+        ScoreBoard.instance.ActiveScoreBoard();
 
     }
 

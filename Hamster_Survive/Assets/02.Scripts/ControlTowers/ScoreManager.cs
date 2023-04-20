@@ -66,12 +66,21 @@ public class ScoreManager : MonoBehaviour
             tText = tText.Insert(0,"0");
         }
 
-        if(tSecond != 0 && tSecond % BossSpawnCoolDown == 0)
+        if((tSecond != 0 || Minit > 0) && tSecond % BossSpawnCoolDown == 0)
         {
             Enemy_Spawner.Instance.SpawnBoss();
         }
 
         mScoreBoard.text = tText;
+    }
+
+    public int GetMinit()
+    {
+        return Minit;
+    }
+    public int GetSec()
+    {
+        return (int)Second;
     }
 
 }

@@ -59,7 +59,9 @@ public class BossUIs : MonoBehaviour
 
     public void ActiveBossHPBar(bool isAlive)
     {
+        BossSlider.value = float.MaxValue;
         BossBar.SetActive(isAlive);
+
     }
     public void SetBossHPBar(int HP,int MaxHP)
     {

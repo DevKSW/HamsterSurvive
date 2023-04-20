@@ -29,11 +29,15 @@ public class Enemy_AI_Shooter: Enemy_AI_Base
     }
     public override void Init()
     {
+        //base.Init();
+
         id = ObjPoolTypes.Enemy_AI_Shooter;
         m_attackDistance = 10.0f;
         m_attackCoolDown = 0.5f;
-        HP = 10;
-        
+        HP = MaxHP;
+        AP = MaxAttack;
+
+        mDirIsFixed = false;
     }
 
     

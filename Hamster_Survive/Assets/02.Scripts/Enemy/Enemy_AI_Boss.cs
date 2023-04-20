@@ -58,11 +58,11 @@ public class Enemy_AI_Boss : Enemy_CanDash
     {
         base.Init();
         id = ObjPoolTypes.Enemy_AI_Boss;
-        /*if (IsStarted)
+        if (IsStarted && gameObject.active)
         {
             ani.GetBehaviour<Start_Dash>().SetAI(this);
             ani.GetBehaviour<FalseDir_Ani>().SetAI(this);
-        }*/
+        }
         tDashTime = 0.75f;
         tDashCoolDownTime = 5.0f;
         m_attackDistance = 10.0f;
@@ -71,6 +71,8 @@ public class Enemy_AI_Boss : Enemy_CanDash
     protected override void Dead()
     {
         BossUIs.instance.ActiveBossHPBar(false);
+        mDirIsFixed = true;
+        _mDir = Vector3.zero;
 
     }
     protected override void HPChanged(int HP , int MaxHP)
